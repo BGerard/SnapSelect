@@ -7,6 +7,12 @@
 }
 @end
 
+//This is all to define whether the position of the icon is correct.
+#define IS_WIDESCREEN ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
+#define IS_IPHONE ( [ [ [ UIDevice currentDevice ] model ] isEqualToString: @"iPhone" ] )
+#define IS_IPHONE_5 ( IS_IPHONE && IS_WIDESCREEN )
+// Thanks to Macmade@stackexchange for these macros.
+
 %hook AVCameraViewController
 
 - (void)viewDidLoad {
@@ -22,7 +28,7 @@
 	
 	// Create the button
 	UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-	btn.frame = CGRectMake(60.0, 435.0 ,btnWidth, btnHeight);
+	btn.frame = CGRectMake(60.0, IS_IPHONE_5 ? 535.0 : 435.0 , btnWidth, btnHeight); // Comparison to get the correct height
 	[btn setImage:btnImage forState:UIControlStateNormal];
 	[btn addTarget:self action:@selector(showPicker) forControlEvents:UIControlEventTouchDown];
 	[cameraOverlay addSubview:btn]; // Add the button to the view that was hooked earlier
