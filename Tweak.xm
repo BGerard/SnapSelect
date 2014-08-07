@@ -46,6 +46,16 @@
     [imagePickController release];
 	
 }
+
 // See the readme as to why there isn't more code needed than this.
+
+%end
+
+// Fix for the crashing on Snapchat v7.0.5
+%hook PreviewViewController
+
+- (void)sendSnapWithSendViewRequired:(BOOL)arg1 {
+	%orig(YES);
+}
 
 %end
