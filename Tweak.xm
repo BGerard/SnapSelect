@@ -28,7 +28,7 @@
 	
 	// Create the button
 	UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-	btn.frame = CGRectMake(60.0, IS_IPHONE_5 ? 535.0 : 435.0 , btnWidth, btnHeight); // Comparison to get the correct height
+	btn.frame = CGRectMake(60.0, IS_IPHONE_5 ? 523.0 : 435.0 , btnWidth, btnHeight); // Comparison to get the correct height
 	[btn setImage:btnImage forState:UIControlStateNormal];
 	[btn addTarget:self action:@selector(showPicker) forControlEvents:UIControlEventTouchDown];
 	[cameraOverlay addSubview:btn]; // Add the button to the view that was hooked earlier
