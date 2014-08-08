@@ -41,6 +41,7 @@
 	UIImagePickerController *imagePickController=[[UIImagePickerController alloc]init];
     imagePickController.sourceType=UIImagePickerControllerSourceTypePhotoLibrary;
     imagePickController.delegate= self;
+    imagePickController.mediaTypes = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypePhotoLibrary]; 
     imagePickController.allowsEditing=NO;
     [self presentModalViewController:imagePickController animated:YES];
     [imagePickController release];

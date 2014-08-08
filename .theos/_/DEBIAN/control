@@ -1,0 +1,10 @@
+Package: com.bengerard.snapselect
+Name: SnapSelect
+Depends: mobilesubstrate
+Architecture: iphoneos-arm
+Description: An awesome MobileSubstrate tweak!
+Maintainer: Ben Gerard
+Author: Ben Gerard
+Section: Tweaks
+Version: 1.1-2
+Installed-Size: 100
